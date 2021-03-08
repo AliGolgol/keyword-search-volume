@@ -80,8 +80,7 @@ EX: ``watch repair kit band`` as a keyword to search, the score for each is ``[1
 EX: Imagine the customer is looking for ``watch repair kit band`` but when s/he ``watch repair kit`` the item that s/he is looking for 
 appears in the suggestion list so base on suggestion formulation the score would be ``30 = 100 - (10 * 7)``
 
-![alt text](images/amazon-autocomplete.png?raw=true"Amazon Autocomplete")
-<img src="images/amazon-autocomplete.png" width="100" height="100">
+<img src="images/amazon-autocomplete.png">
 
 > As I mentioned above as soon as the result appears in the suggestion list the algorithm discontinues
 > to search and then calculates the search-volume base on the keyword and suggestions list score.
