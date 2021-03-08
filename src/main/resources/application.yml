@@ -1,0 +1,11 @@
+server:
+  port: 8090
+spring:
+  banner:
+    location: static/banner.txt
+sellics:
+  amazon:
+    url: https://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q=%s
+    host: completion.amazon.com
+    api: search/complete
+    timeout: 10s
