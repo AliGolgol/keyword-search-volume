@@ -78,7 +78,7 @@ EX: ``watch repair kit band`` as a keyword to search, the score for each is ``[1
     score = (MAX_SCORE - (STEP_VALUE * keywordPositionInSuggestions));
 ```
 EX: Imagine the customer is looking for ``watch repair kit band`` but when s/he ``watch repair kit`` the item that s/he is looking for 
-appears in the suggestion list so base on suggestion formulation the score would be ``30 = 100 - (10 * 7)``
+appears in the suggestion list so base on suggestion formulation the score would be ``90 = 100 - (10 * 1)``
 
 <img src="images/amazon-autocomplete.png">
 
@@ -89,7 +89,7 @@ appears in the suggestion list so base on suggestion formulation the score would
 
 ```
     search volume = (keyword score * suggestion score) / 100
-    15 = (50 * 30) / 100
+    45 = (50 * 90) / 100
 ```
 
 ### Do you think the (*hint) that we gave you earlier is correct and if so - why?
