@@ -5,7 +5,9 @@ import com.sellics.assignment.amazonsearchvolume.config.AmazonAPI;
 import com.sellics.assignment.amazonsearchvolume.dto.AmazonSuggestions;
 import com.sellics.assignment.amazonsearchvolume.dto.Suggestion;
 import com.sellics.assignment.amazonsearchvolume.exception.AmazonAutocompleteException;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,19 +17,17 @@ import java.util.List;
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Service
-public class AmazonAutocompleteClient {
+public class AmazonAutocompleteClientImp implements AmazonAutocompleteClient {
 
-    private static final Logger LOGGER = getLogger(AmazonAutocompleteClient.class);
-    private final ObjectMapper objectMapper;
-    private final RestTemplate restTemplate;
-    private final AmazonAPI amazonAPI;
+    private static final Logger LOGGER = getLogger(AmazonAutocompleteClientImp.class);
 
-    public AmazonAutocompleteClient(ObjectMapper objectMapper, AmazonAPI amazonAPI) {
-        this.objectMapper = objectMapper;
-        this.restTemplate = new RestTemplate();
-        this.amazonAPI = amazonAPI;
-    }
+//    @Autowired
+//    private ObjectMapper objectMapper;
 
+    @Autowired
+    private RestTemplate restTemplate;
+    @Autowired
+    private AmazonAPI amazonAPI;
 
     /**
      * To call Amazon Autocomplete API
@@ -50,7 +50,7 @@ public class AmazonAutocompleteClient {
      */
     private AmazonSuggestions parseResponse(String searchResult) {
         Object[] resultArray;
-
+        ObjectMapper objectMapper = new ObjectMapper();
         AmazonSuggestions amazonSuggestions = new AmazonSuggestions();
         try {
             resultArray = objectMapper.readValue(searchResult, Object[].class);

@@ -22,36 +22,34 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SearchVolumeControllerTest {
+public class AcceptanceTest {
 
     @Autowired
     SearchVolumeScoreService searchVolumeScoreService;
 
-    @MockBean
+    @Autowired
     AmazonAutocompleteClient amazonAutocompleteClient;
 
-    @MockBean
-    AmazonAPI amazonAPI;
+//    @MockBean
+//    AmazonAPI amazonAPI;
 
 //    @Autowired
 //    ObjectMapper objectMapper;
 
     @Test
     public void test() {
-        AmazonSuggestions amazonSuggestions = new AmazonSuggestions();
-        amazonSuggestions.setSuggestions(Stream.of(
-                new Suggestion("iphone charger"),
-                new Suggestion("iphone charger"),
-                new Suggestion("iphone charger"),
-                new Suggestion("iphone charger"),
-                new Suggestion("iphone charger"))
-                .collect(Collectors.toList()));
+        String keyword = "watch repair kit band";
+//        AmazonSuggestions amazonSuggestions = new AmazonSuggestions();
+//        amazonSuggestions.setSuggestions(Stream.of(
+//                new Suggestion("watch repair kit battery replacement"),
+//                new Suggestion("watch repair kit band"),
+//                new Suggestion("watch repair kit battery"),
+//                new Suggestion("iphone charger"),
+//                new Suggestion("iphone charger"))
+//                .collect(Collectors.toList()));
 
-        when(amazonAPI.getUrl()).thenReturn("https://completion.amazon.com/search/complete?search-alias=aps&client=amazon-search-ui&mkt=1&q=%s");
-        when(amazonAutocompleteClient.getAmazonSuggestion("iphone charger")).thenReturn(amazonSuggestions);
+        ScoreKeywordDto scoreKeywordDto = ScoreKeywordDto.builder().keyword(keyword).score(45).build();
 
-        ScoreKeywordDto scoreKeywordDto = ScoreKeywordDto.builder().keyword("iphone charger").score(50).build();
-
-        Assert.assertEquals(scoreKeywordDto, searchVolumeScoreService.calculateAmazonSearchVolume("iphone charger"));
+        Assert.assertEquals(scoreKeywordDto.getScore(), searchVolumeScoreService.calculateAmazonSearchVolume(keyword).getScore());
     }
 }

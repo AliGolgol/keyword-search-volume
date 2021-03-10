@@ -11,13 +11,8 @@ import java.util.StringJoiner;
 @Service
 public class SearchVolumeScoreServiceImp implements SearchVolumeScoreService {
 
-    private final AmazonAutocompleteClient amazonAutocompleteClient;
-
     @Autowired
-    public SearchVolumeScoreServiceImp(AmazonAutocompleteClient amazonAutocompleteClient) {
-        this.amazonAutocompleteClient = amazonAutocompleteClient;
-    }
-
+    private  AmazonAutocompleteClient amazonAutocompleteClient;
 
     /**
      * Calculate the search volume of keyword base on Amazon Autocomplete API`s suggestions
