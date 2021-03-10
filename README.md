@@ -63,7 +63,7 @@ which is why they type the words that are most significant to them first. Amazon
 ### How does your algorithm work?
 The algorithm scores the keywords and suggestions base on the order of each, then calculate the search search-volume base on them.
 
-####Score of keywords formulation: 
+#### Score of keywords formulation: 
 ```
     MAX_SCORE = 100;
     STEP_VALUE = MAX_SCORE / keywords.length;
