@@ -77,7 +77,7 @@ EX: ``watch repair kit band`` as a keyword to search, the score for each is ``[1
     STEP_VALUE = MAX_SCORE / lengthOfSuggestionList;
     score = (MAX_SCORE - (STEP_VALUE * keywordPositionInSuggestions));
 ```
-EX: Imagine the customer is looking for a ``watch repair kit ban`` but when s/he  types the ``watch repair ki`` what s/he is looking for appears
+EX: Imagine the customer is looking for a ``watch repair kit ban`` while s/he  typed the ``watch repair ki`` what s/he is looking for appears
 in the suggestion list so base on our Suggestion Formulation the score would be ``90 = 100 - (10 * 1)``
 <img src="images/amazon-autocomplete.png">
 
