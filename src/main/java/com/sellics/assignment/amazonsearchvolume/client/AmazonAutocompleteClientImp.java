@@ -21,9 +21,8 @@ public class AmazonAutocompleteClientImp implements AmazonAutocompleteClient {
 
     private static final Logger LOGGER = getLogger(AmazonAutocompleteClientImp.class);
 
-//    @Autowired
-//    private ObjectMapper objectMapper;
-
+    @Autowired
+    private ObjectMapper objectMapper;
     @Autowired
     private RestTemplate restTemplate;
     @Autowired
@@ -50,7 +49,6 @@ public class AmazonAutocompleteClientImp implements AmazonAutocompleteClient {
      */
     private AmazonSuggestions parseResponse(String searchResult) {
         Object[] resultArray;
-        ObjectMapper objectMapper = new ObjectMapper();
         AmazonSuggestions amazonSuggestions = new AmazonSuggestions();
         try {
             resultArray = objectMapper.readValue(searchResult, Object[].class);
