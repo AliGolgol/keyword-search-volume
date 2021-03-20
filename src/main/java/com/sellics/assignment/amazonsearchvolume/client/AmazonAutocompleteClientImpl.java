@@ -5,7 +5,6 @@ import com.sellics.assignment.amazonsearchvolume.config.AmazonAPI;
 import com.sellics.assignment.amazonsearchvolume.dto.AmazonSuggestions;
 import com.sellics.assignment.amazonsearchvolume.dto.Suggestion;
 import com.sellics.assignment.amazonsearchvolume.exception.AmazonAutocompleteException;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +16,9 @@ import java.util.List;
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Service
-public class AmazonAutocompleteClientImp implements AmazonAutocompleteClient {
+public class AmazonAutocompleteClientImpl implements AmazonAutocompleteClient {
 
-    private static final Logger LOGGER = getLogger(AmazonAutocompleteClientImp.class);
+    private static final Logger LOGGER = getLogger(AmazonAutocompleteClientImpl.class);
 
     @Autowired
     private ObjectMapper objectMapper;
