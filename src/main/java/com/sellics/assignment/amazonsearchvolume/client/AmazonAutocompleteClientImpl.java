@@ -44,7 +44,7 @@ public class AmazonAutocompleteClientImpl implements AmazonAutocompleteClient {
      * Parse the response of Amazon Autocomplete API to {@link AmazonSuggestions}
      *
      * @param searchResult the Amazon Autocomplete API`s response
-     * @return
+     * @return List of Amazon's Suggestions which is up to 10
      */
     private AmazonSuggestions parseResponse(String searchResult) {
         Object[] resultArray;
@@ -59,6 +59,4 @@ public class AmazonAutocompleteClientImpl implements AmazonAutocompleteClient {
         }
         return amazonSuggestions;
     }
-
-
 }
