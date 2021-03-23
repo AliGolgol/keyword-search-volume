@@ -8,5 +8,4 @@ import lombok.Getter;
 public class ScoreKeywordDto {
     String keyword;
     int score;
-
 }

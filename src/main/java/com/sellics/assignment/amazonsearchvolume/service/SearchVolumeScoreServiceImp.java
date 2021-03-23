@@ -31,7 +31,7 @@ public class SearchVolumeScoreServiceImp implements SearchVolumeScoreService {
             if (suggestions.findByKeyword(keyword.trim()) != -1) {
                 searchVolumeScore = calculateSearchVolume(
                         calculateScoreOfKeyword(keywordList, index),
-                        calculateScoreOfSuggestion(suggestions.findByKeyword(keyword), suggestions.suggestions.size()));
+                        calculateScoreOfSuggestion(suggestions.findByKeyword(keyword), suggestions.suggestions.size()));//
                 break;
             }
         }
